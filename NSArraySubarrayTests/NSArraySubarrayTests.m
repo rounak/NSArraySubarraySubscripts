@@ -66,5 +66,9 @@
     NSArray *subarray = self.arr[@"5..9"];
     STAssertNil(subarray, @"accessing outside length should return nil");
 }
-
+- (void)testNSArrayEndPositionEqualToLength
+{
+    NSArray *subarray = self.arr[[NSString stringWithFormat:@"2..%ld",(unsigned long)self.arr.count]];
+        STAssertEqualObjects(subarray, [self.arr subarrayWithRange:NSMakeRange(2, self.arr.count - 2)], @"If end is outside length, then return from start position to end");
+}
 @end

@@ -27,7 +27,7 @@
         return nil;
     }
     NSUInteger end = [limits[1] intValue];
-    end = end > self.count ? self.count - 1 : end;
+    end = (end >= self.count) ? self.count - 1 : end;
     return [self subarrayWithRange:NSMakeRange(start, end - start + 1)];
 }
 @end
