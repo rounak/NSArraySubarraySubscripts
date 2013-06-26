@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'NSArraySubarraySubscripts' target in the 'NSArraySubarraySubscripts' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
