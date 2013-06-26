@@ -61,4 +61,10 @@
     STAssertNil(subarray, @"Non numeric ranges should return nil");
 }
 
+- (void)testNSArrayOutOfRangeStart
+{
+    NSArray *subarray = self.arr[@"5..9"];
+    STAssertNil(subarray, @"accessing outside length should return nil");
+}
+
 @end

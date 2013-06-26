@@ -19,14 +19,15 @@
         return nil;
     }
     NSArray *limits = [range componentsSeparatedByString:@".."];
-//    if (!limits || limits.count!=2) {
-//        return nil;
-//    }
-    
 
+    
+    
     NSUInteger start = [limits[0] intValue];
+    if (start >= self.count) {
+        return nil;
+    }
     NSUInteger end = [limits[1] intValue];
-    end = end > range.length ? range.length - 1 : end;
+    end = end > self.count ? self.count - 1 : end;
     return [self subarrayWithRange:NSMakeRange(start, end - start + 1)];
 }
 @end

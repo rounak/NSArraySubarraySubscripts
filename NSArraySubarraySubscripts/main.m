@@ -19,7 +19,7 @@ int main(int argc, const char * argv[])
         
         NSArray *arr = [NSArray arrayWithObjects:@"1",@"2",@"3",@"5",@"9", nil];
         
-        NSLog(@"%@",arr[@"1..4"]);
+        NSLog(@"%@",arr[@"1..3"]);
         
     }
     return 0;
