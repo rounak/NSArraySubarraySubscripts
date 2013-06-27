@@ -25,6 +25,9 @@
     
 
         NSUInteger start = [limits[0] intValue];
+        if (start>range.length-1) {
+            return nil;
+        }
         NSUInteger end = [limits[1] intValue];
         end = end > range.length ? range.length - 1 : end;
         return [self subarrayWithRange:NSMakeRange(start, end - start + 1)];
@@ -35,6 +38,9 @@
         NSArray *limits = [range componentsSeparatedByString:@"..."];
         
         NSUInteger start = [limits[0] intValue];
+        if (start>range.length-1) {
+            return nil;
+        }
         NSUInteger end = range.length-1;
         return [self subarrayWithRange:NSMakeRange(start, end - start + 1)];
 
