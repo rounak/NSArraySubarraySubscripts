@@ -60,5 +60,10 @@
     NSArray *subarray = self.arr[@"1..b"];
     STAssertNil(subarray, @"Non numeric ranges should return nil");
 }
+-(void)testNSArrayForIndexTillEnd
+{
+    NSArray *subarray = self.arr[@"2..."];
+    STAssertEqualObjects(subarray, [self.arr subarrayWithRange:NSMakeRange(2, 2)], @"Should return elements from the mentioned index till the end");
+}
 
 @end
