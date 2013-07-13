@@ -60,6 +60,21 @@
     NSArray *subarray = self.arr[@"1..b"];
     STAssertNil(subarray, @"Non numeric ranges should return nil");
 }
+-(void)testNSArrayForIndexTillEnd
+{
+    NSArray *subarray = self.arr[@"2..."];
+    STAssertEqualObjects(subarray, [self.arr subarrayWithRange:NSMakeRange(2, 2)], @"Should return elements from the mentioned index till the end");
+}
+-(void)testNSArrayStartIndexOutOfBounds
+{
+    NSArray *subarray = self.arr[@"4..."];
+    STAssertNil(subarray, @"Should return nil when start index is out of bounds");
+}
+-(void)testNSArrayStartRangeOutOfBounds
+{
+    NSArray *subarray = self.arr[@"4..6"];
+    STAssertNil(subarray, @"Should return nil when start index of the range is out of bounds");
+}
 
 - (void)testNSArrayOutOfRangeStart
 {
