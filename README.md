@@ -4,6 +4,7 @@ Example usage:
 ```objective-c
 NSArray *arr = [NSArray arrayWithObjects:@"Foo",@"Bar",@"Bob",@"Alice", nil];
 NSLog(@"%@",arr[@"1..3"])
+// will print (Bar, Bob, Alice)
 ```
 More aboout object subscripting:
 - [NSHipster](http://nshipster.com/object-subscripting/)
